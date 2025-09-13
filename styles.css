@@ -57,6 +57,10 @@ li {
 .refresh, .mainContent {
     border-radius: 5%;
 }
+li button {
+    position: relative;
+    left: 200px;
+}
 
 @media screen and (min-width: 320px) {
     .mainContent {
