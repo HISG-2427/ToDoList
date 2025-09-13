@@ -2,10 +2,8 @@ const button = document.querySelector("button");
 const ul = document.querySelector("ul");
 const input = document.querySelector("input");
 const refresh = document.querySelector(".refresh");
-const div = document.createElement("div");
-const p1 = document.createElement("p");
-const p2 = document.createElement("p");
-const p3 = document.createElement("p");
+const checkbox = document.createElement("input");
+checkbox.type = "checkbox";
 
 const trashbtn = document.createElement("button");
 trashbtn.setAttribute('class', 'bxr  bx-trash'); 
@@ -19,9 +17,15 @@ function addTask(){
         const btnclone = trashbtn.cloneNode(true);
         const li = document.createElement("li");
 
+        li.appendChild(checkbox);
         li.appendChild(textNode);
         li.appendChild(btnclone);
         ul.appendChild(li);
+
+        btnclone.addEventListener('click', (e) => {
+            e.target.parentElement.remove();
+        });
+
         input.value = "";
         refresh.style.opacity = "1";
     } 
@@ -30,6 +34,3 @@ function refreshTask() {
     ul.innerHTML = "";
     refresh.style.opacity = "0";
 };
-trashbtn.addEventListener("click", function remove(li){
-    li.parentNode.removeChild(li);
-})

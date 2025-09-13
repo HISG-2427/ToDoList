@@ -6,7 +6,6 @@ body{
     font-family: "Outfit";
 }
 .mainContent {
-    text-align: center;
     position: relative;
     top: 100px;
     left: 30px;
@@ -17,7 +16,13 @@ body{
     background: transparent;
     backdrop-filter: blur(30px);
 }
-input, button {
+h1, .text{
+    text-align: center;
+}
+.text{
+    margin-left: 100px;
+}
+.text, button {
     background: transparent;
     outline: none;
     border: none;
@@ -26,12 +31,15 @@ input, button {
 button:hover {
     cursor: pointer;
 }
-input::placeholder, button, input[type="text"] {
+.refresh{
+    margin-left: 200px;
+}
+.text::placeholder, button, input[type="text"] {
     color: white;
 }
 li {
     font-size: 20px;
-    margin: 10px 0;
+    margin: 0;
 }
 .fadeInUp {
     animation: fadeInUp;
@@ -57,9 +65,16 @@ li {
 .refresh, .mainContent {
     border-radius: 5%;
 }
+input[type="checkbox"]{
+    text-align: left; 
+    margin-right: 1em;
+}
 li button {
     position: relative;
-    left: 200px;
+    left: 300px;
+}
+li::marker {
+    content: "";
 }
 
 @media screen and (min-width: 320px) {
